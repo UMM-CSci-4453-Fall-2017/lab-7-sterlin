@@ -25,12 +25,11 @@ var query = function(command){
 
 sql='SHOW DATABASES';
 var result = query(mysql.format(sql));
-result
-    .then(
-        function(dbfs,err){
-            console.log(dbfs);
-        })
-    .then(
+
+result.then(
+    function(dbfs,err){
+        console.log(dbfs);
+    }).then(
         function(){
             pool.end();
         }
